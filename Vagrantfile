@@ -16,5 +16,8 @@ Vagrant::Config.run do |config|
     chef.validation_key_path = ".chef/officehours-validator.pem"
     chef.validation_client_name = "officehours-validator"
     chef.node_name = "local-vagrant-office-hours"
+    chef.add_recipe("apache2")
+    chef.add_recipe("bar")
+    chef.add_recipe("foo")
   end
 end
