@@ -9,8 +9,7 @@ Vagrant::Config.run do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "bento-12.04"
   config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box"
-
-  config.vm.customize ["modifyvm", :id, "--memory", 4096]
+  config.vm.forward_port 80, 8080
 
   config.vm.provision :chef_client do |chef|
     chef.chef_server_url = "https://api.opscode.com/organizations/officehours"
