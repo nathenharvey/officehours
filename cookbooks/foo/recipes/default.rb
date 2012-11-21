@@ -11,4 +11,5 @@ template "/tmp/demo" do
   variables(
     :my_string => node['custom_string']
   )
+  mode "00777"
 end
